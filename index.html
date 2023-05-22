@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+	<head>
+
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Encriptador de Texto</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,700&display=swap" rel="stylesheet">
+
+	</head>
+
+	<body>
+
+		<main>
+
+			<h1 class="titulo">Encriptador de texto</h1>
+
+			<div class="texto-recibido">
+				<textarea cols="38" rows="9" name ="texto-recibido" id="texto-recibido" placeholder="Ingrese su texto aquí"></textarea>
+			</div>
+
+			<div class="botones">
+				<div class="advertencia">
+					<strong>!</strong> Sólo letras minúsculas y sin acento
+				</div>	
+				<button id="encriptar">Encriptar texto</button>
+				<button id="desencriptar">Desencriptar texto</button>
+			</div>
+
+			<div class="texto-mostrado">
+				<textarea cols="24" rows="19" name="texto-mostrado" id="texto-mostrado" readonly></textarea>
+				<img src="no-text.png" alt="No hay texto" id="no-text-img" style="display: none;">
+				<p id="no-text-message" class="mensaje-vacio">No se ha encontrado <br> el mensaje</p>
+				<button id="copiar">COPIAR</button>
+			</div>
+
+			<video id="video-fondo" autoplay muted loop>
+
+				<source src="background.mp4" type="video/mp4">
+
+			</video>
+
+		</main>
+
+	</body>
+
+</html>
+
+<script>
+
+
+	function encriptarTexto () {
+
+		var encriptarT = document.getElementById("texto-recibido");
+
+		var textoEncriptado = encriptarT.value.replace(/[aeiou]/g,function(encriptarLetra) {
+
+		switch (encriptarLetra) {
+
+			case "a" :
+
+				return "ai";
+
+			case "e" :
+
+				return "enter"
+
+			case "i" :
+
+				return "imes";
+
+			case "o" :
+
+				return "ober";
+
+			case "u" :
+
+				return "ufat";
+
+			default:
+
+				return encriptarLetra;
+			}
+
+		});
+		
+		document.querySelector("#texto-mostrado").innerHTML = textoEncriptado;
+
+		encriptarT.value = ""
+
+	}
+
+
+	function desencriptarTexto () {
+
+		var desencriptarT = document.getElementById("texto-recibido");
+
+		var textoDesencriptado = desencriptarT.value.replace(/ai|enter|imes|ober|ufat/g,function(desencriptarLetra) {
+
+		switch (desencriptarLetra) {
+
+			case "ai" :
+
+				return "a";
+
+			case "enter" :
+
+				return "e"
+
+			case "imes" :
+
+				return "i";
+
+			case "ober" :
+
+				return "o";
+
+			case "ufat" :
+
+				return "u";
+
+			default:
+
+				return desencriptarLetra;
+
+		}
+
+		
+		});
+
+		document.querySelector("#texto-mostrado").innerHTML = textoDesencriptado;
+
+		desencriptarT.value = ""
+	}
+
+	var textareaMostrado = document.getElementById('texto-mostrado');
+	var noTextImg = document.getElementById('no-text-img');
+	var noTextMessage = document.getElementById('no-text-message');
+
+		function verificarTexto() {
+
+			const texto = textareaMostrado.value;
+			if (texto.length > 0) {
+				noTextImg.style.display = 'none';
+				noTextMessage.style.display = 'none';
+			} else {
+				noTextImg.style.display = 'inline-block';
+				noTextMessage.style.display = 'inline-block';
+			}
+		}
+
+		function ocultarImagen() {
+
+			noTextImg.style.display = 'none';
+			noTextMessage.style.display = 'none';	
+
+		}	
+
+		function copiarTexto () {
+
+			var texto = document.getElementById("texto-mostrado").value;
+  			var elementoTemporal = document.createElement("textarea");
+  			elementoTemporal.value = texto;
+  			document.body.appendChild(elementoTemporal);
+  			elementoTemporal.select();
+  			document.execCommand("copy");
+  			document.body.removeChild(elementoTemporal);
+
+		}
+
+
+		function mostrarBotonCopiar() {
+
+        	botonCopiar.style.display = 'block';
+    }
+
+
+    function cambiarTexto() {
+
+  		botonCopiar.innerHTML = "COPIADO";
+  		botonCopiar.classList.add("copiado");
+  
+ 		setTimeout(function() {
+    	botonCopiar.innerHTML = "COPIAR";
+    	botonCopiar.classList.remove("copiado");
+  		}, 5000);
+
+ 	}
+
+
+	var botonDesencriptar = document.querySelector("#desencriptar")
+	var botonEncriptar = document.querySelector("#encriptar")
+	var botonCopiar = document.querySelector("#copiar")
+
+	textareaMostrado.addEventListener('input', verificarTexto);
+	window.addEventListener('DOMContentLoaded', verificarTexto);
+	textareaMostrado.addEventListener('input', verificarTexto);
+	botonDesencriptar.addEventListener("click", desencriptarTexto);
+	botonEncriptar.addEventListener("click", encriptarTexto);
+	botonEncriptar.addEventListener('click', ocultarImagen);
+	botonDesencriptar.addEventListener('click',ocultarImagen);
+	botonEncriptar.addEventListener('click',mostrarBotonCopiar);
+	botonDesencriptar.addEventListener('click',mostrarBotonCopiar);
+	botonCopiar.addEventListener('click', copiarTexto);
+	botonCopiar.addEventListener('click',cambiarTexto);
+	botonCopiar.style.display = 'none';
+
+
+
+</script>

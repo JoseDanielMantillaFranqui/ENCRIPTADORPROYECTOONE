@@ -1,0 +1,445 @@
+body, html {
+
+  	height: 100%;
+  	width: 100%;
+ 	margin: 0;
+  	padding: 0;
+}
+
+main {
+	width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: absolute;
+    box-shadow: inset 0 0 30px 15px #3d0606;
+}
+
+.titulo {
+
+	display: inline;
+	position: absolute;
+	font-size: 50px;
+	color: #c48787;
+	font-family: courier;
+	top: 25px;
+	padding: 15px 15px;
+	background: #2E0808;
+	left: 60px;
+	border-radius: 20px;
+	text-shadow: 1px 1px 5px red;
+	word-break: break-word;
+}
+
+@keyframes parpadeo {
+
+  	0% { opacity: 0; }
+  	50% { opacity: 1; }
+}
+
+.titulo::after {
+  content: "_";
+  display: inline-block;
+  animation: parpadeo 1s infinite;
+}
+
+.texto-recibido {
+
+	display: inline-block;
+	position: absolute;
+	top: 140px;
+	left: 100px;
+}
+
+#texto-recibido {
+
+	padding: 30px 40px;
+	background: #000000;
+	color: white;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 30px;
+	border: none;
+	border-radius: 50px;
+	resize: none;
+}
+
+#texto-recibido:focus {
+
+	outline: 1px solid #541313;
+	box-shadow: none;
+
+}
+
+#texto-recibido::placeholder {
+
+	color: #c48787;
+}
+
+.botones {
+
+	position: absolute;
+	top: 590px;
+	left: 150px;
+	width: 42%;
+
+}
+
+.advertencia {
+
+	margin-bottom: 15px;
+	background: #000000;
+	display: inline-block;
+	position: relative;
+	top: 5px;
+	left: 10px;
+	color: white;
+	padding: 3px 3px;
+	font-size: 18px;
+	font-family: courier;
+	border-radius: 15px;
+}
+
+.advertencia strong {
+
+	margin: 0 5px;
+	background: #400b0b;
+	padding: 0 5px;
+	border-radius: 15px;
+	color: #c48787;
+}
+
+#encriptar {
+	
+	padding: 20px 30px;
+	font-size: 25px;
+	font-family: courier;
+	font-weight: bold;
+	font-style: italic;
+	border-radius: 50px;
+	border: none;
+	background: #400b0b;
+	color: #c48787;
+	transition: 1s all;
+	margin-right: 10px;
+	cursor: pointer;
+	text-shadow: 0 0 3px red;
+
+}
+
+#encriptar:hover {
+
+	background: #6b1f1f;
+}
+
+#desencriptar {
+
+	padding: 20px 30px;
+	font-size: 25px;
+	font-family: courier;
+	font-weight: bold;
+	font-style: italic;
+	border-radius: 50px;
+	border: none;
+	background: #400b0b;
+	color: #c48787;
+	transition: 1s all;
+	cursor: pointer;
+	text-shadow: 0 0 3px red;
+}
+
+#desencriptar:hover {
+
+	background: #6b1f1f;
+}
+
+.texto-mostrado{
+
+	position: relative;
+	top:0;
+	left: 1050px; 
+	display: inline-block;
+	width: 27%;
+	height: 65%;
+	
+
+}
+
+.texto-mostrado button {
+
+	position: relative;
+	top: -100px;
+	right: -85px;
+	padding: 20px 80px;
+	font-size: 25px;
+	font-family: courier;
+	font-weight: bold;
+	font-style: italic;
+	border-radius: 50px;
+	border: none;
+	background: #400b0b;
+	color: #c48787;
+	transition: 1s all;
+	cursor: pointer;
+	text-shadow: 0 0 3px red;
+
+}
+
+#copiar.copiado {
+
+  	background-color: #6b1f1f;
+  	font-size: 25px;
+
+}
+
+.texto-mostrado button:hover {
+
+	background: #6b1f1f;
+}
+
+#texto-mostrado {
+
+	position: relative;
+	top: 30px;
+	right: -5px;
+	background: #000000;
+	color: white;
+	border: none;
+	border-radius: 30px;
+	padding: 30px 50px 150px;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 20px;
+	resize: none;
+	outline:none;
+}
+
+#no-text-img {
+
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	bottom: 100px;
+	right: 120px;
+}
+
+
+.mensaje-vacio {
+	color: #c48787;		
+	position: relative;		
+	bottom: 200px;		
+	right: -210px;		
+	transform: translate(-50%, -50%);
+	display: none;	
+	text-align: center;	
+	font-size: 28px;
+	font-family: 'Roboto Mono', monospace;
+	font-weight: bold;
+}
+
+
+
+#video-fondo {
+
+	  position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+}
+
+@media screen and (max-width: 480px) {
+
+	main {
+
+		width: 32em;
+		height: 150em;
+	}
+
+	.titulo {
+		position:absolute;
+		font-size: 60px;
+		top: 2%;
+		left: 6%;
+		word-break: normal;
+		width: 80%;
+	}
+
+ 	.texto-recibido {
+
+ 		position: relative;
+ 		top: 13%;
+ 		left: 10%;
+ 		width: 60%;
+ 		height: 25%;
+ 	}
+
+ 	#texto-recibido {
+
+ 		width: 100%;
+ 		height: 100%;
+ 	}
+
+ 	.botones {
+
+ 		position: absolute;
+ 		top: 45%;
+ 		left: 16%;
+ 		width: 60%;
+ 	}
+
+ 	.advertencia {
+
+ 		font-size: 23px;
+ 	}
+
+ 	#encriptar {
+
+ 		margin-bottom: 15px;
+ 		font-size: 40px;
+ 		padding: 20px 64px;
+ 	}
+
+ 	#desencriptar {
+
+ 		font-size: 40px;
+
+ 	}
+
+ 	.texto-mostrado {
+
+ 		position: absolute;
+ 		top: 65%;
+ 		left: 9%;
+ 		height: 23%;
+ 		width: 56%;
+ 	}
+
+ 	#texto-mostrado {
+
+		width: 100%;
+		height: 100%;
+		font-size: 30px;
+ 	}
+
+	#no-text-img {
+
+		top: 38%;
+		left: 40%;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 1280px) {
+
+
+.texto-recibido {
+
+	 	position: absolute;
+ 		top: 18%;
+ 		left: 5%;
+ 		width: 45%;
+ 		height: 45%;
+ 	}
+
+ 	#texto-recibido {
+
+ 		width: 100%;
+ 		height: 100%;
+ 	}
+
+ 	.botones {
+
+ 		position: absolute;
+ 		left: 7%;
+ 		width: 52%;
+ 	}
+
+ 	.texto-mostrado {
+
+ 		position: absolute;
+ 		top: 1%;
+ 		left: 65%; 
+
+ 	}
+
+ 	#no-text-img {
+
+ 		position: absolute;
+ 		left: 32%;
+ 	}
+
+
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1366px) {
+
+	main {
+
+		width: 86em;
+		height: 51em;
+	}
+
+	.titulo {
+
+		position: absolute;
+		font-size: 40px
+	}
+
+	 .texto-recibido {
+
+ 		position: absolute;
+ 		top: 18%;
+ 		left: 5%;
+ 		width: 45%;
+ 		height: 45%;
+ 	}
+
+ 	#texto-recibido {
+
+ 		width: 100%;
+ 		height: 100%;
+ 	}
+
+ 	.botones {
+
+ 		position: absolute;
+ 		top: 75%;
+ 		left: 5%;
+ 		width:47%;
+ 		display: inline;
+ 	}
+
+ 	.advertencia {
+
+ 		position: relative;
+ 	}
+
+
+ 	#texto-recibido::placeholder {
+
+ 		font-size: 30px;
+ 	}
+
+ 	.texto-mostrado {
+
+ 		position: absolute;
+ 		top: 3%;
+ 		left: 65%;
+ 		height: 60%;
+ 		width: 23%;
+ 	}
+
+ 	#texto-mostrado {
+
+		width: 100%;
+		height: 100%;
+		font-size: 30px;
+ 	}
+
+ 	#no-text-img {
+
+ 		bottom: 100px;
+ 		right: 1%;
+ 	}
+
+}	
