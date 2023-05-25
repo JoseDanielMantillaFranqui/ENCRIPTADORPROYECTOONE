@@ -187,6 +187,7 @@ main {
 
   	background-color: #6b1f1f;
   	font-size: 25px;
+  	padding: 20px 76px;
 
 }
 
@@ -321,6 +322,12 @@ main {
 		height: 100%;
 		font-size: 30px;
  	}
+
+ 	#copiar {
+
+ 		left: 70px;
+ 	}
+
 
 	#no-text-img {
 
