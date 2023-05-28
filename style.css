@@ -338,6 +338,10 @@ main {
 
 @media screen and (min-width: 481px) and (max-width: 1280px) {
 
+main {
+
+	height: 112%;
+}
 
 .texto-recibido {
 
