@@ -48,6 +48,7 @@ main {
 	position: absolute;
 	top: 140px;
 	left: 100px;
+	width: 40%;
 }
 
 #texto-recibido {
@@ -60,6 +61,7 @@ main {
 	border: none;
 	border-radius: 50px;
 	resize: none;
+	width: 100%;
 }
 
 #texto-recibido:focus {
@@ -210,6 +212,8 @@ main {
 	font-size: 20px;
 	resize: none;
 	outline:none;
+	width: 70%;
+	height: 100%;
 }
 
 #no-text-img {
@@ -252,88 +256,88 @@ main {
 @media screen and (max-width: 480px) {
 
 	main {
-
-		width: 32em;
-		height: 150em;
+		display: inline;
+		width: auto;
+		height: auto;
 	}
 
 	.titulo {
 		position:absolute;
-		font-size: 60px;
-		top: 2%;
-		left: 6%;
-		word-break: normal;
-		width: 80%;
+		left: 20px;
+		font-size: 45px;
+		width: 83%;
+		
 	}
 
  	.texto-recibido {
 
- 		position: relative;
- 		top: 13%;
- 		left: 10%;
- 		width: 60%;
- 		height: 25%;
- 	}
-
- 	#texto-recibido {
-
- 		width: 100%;
- 		height: 100%;
+ 		position: static;
+ 		width: 70%;
+ 		display: inline-block;
+ 		margin-top: 200px;
+ 		margin-right: 20px;
+ 		margin-left: 20px;
+ 		margin-bottom: 50px;
  	}
 
  	.botones {
 
- 		position: absolute;
- 		top: 45%;
- 		left: 16%;
- 		width: 60%;
+ 		position: static;
+ 		width: auto;
+ 		margin: 0 30px 50px 30px;
  	}
 
  	.advertencia {
 
  		font-size: 23px;
+ 		width: auto;
  	}
 
  	#encriptar {
 
  		margin-bottom: 15px;
- 		font-size: 40px;
+ 		font-size: 30px;
  		padding: 20px 64px;
  	}
 
  	#desencriptar {
 
- 		font-size: 40px;
+ 		font-size: 30px;
 
  	}
 
  	.texto-mostrado {
 
- 		position: absolute;
- 		top: 65%;
- 		left: 9%;
- 		height: 23%;
- 		width: 56%;
+ 		position: static;
+ 		width: auto;
+ 		height: auto;
+ 		margin: 0 20px 0 20px;
+
  	}
 
  	#texto-mostrado {
 
-		width: 100%;
-		height: 100%;
 		font-size: 30px;
  	}
 
  	#copiar {
 
- 		left: 70px;
+ 		left: 60px;
  	}
 
 
 	#no-text-img {
 
-		top: 38%;
-		left: 40%;
+		top: 72%;
+		left: 30%;
 	}
+
+    #no-text-message {
+
+    	font-size: 28px;
+    	left: 50.5%;
+    	bottom: 144px;
+    }
 }
 
 @media screen and (min-width: 481px) and (max-width: 1280px) {
@@ -370,6 +374,12 @@ main {
  		position: absolute;
  		top: 1%;
  		left: 65%; 
+
+ 	}
+
+ 	#texto-mostrado {
+
+ 		width: 87%;
 
  	}
 
