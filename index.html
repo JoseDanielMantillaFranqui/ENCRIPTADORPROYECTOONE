@@ -144,6 +144,20 @@
 	var noTextImg = document.getElementById('no-text-img');
 	var noTextMessage = document.getElementById('no-text-message');
 
+		function convertirTexto() {
+
+			  var textarea = document.getElementById("texto-recibido");
+			  var texto = textarea.value;
+
+			  var textoMin = texto.toLowerCase();
+
+			  var textoSinAcentos = textoMin
+			    .normalize("NFD")
+			    .replace(/[\u0300-\u036f]/g, "");
+
+			  textarea.value = textoSinAcentos;
+			}
+
 		function verificarTexto() {
 
 			const texto = textareaMostrado.value;
@@ -158,8 +172,14 @@
 
 		function ocultarImagen() {
 
-			noTextImg.style.display = 'none';
-			noTextMessage.style.display = 'none';	
+			const texto = textareaMostrado.value;
+			if (texto.length > 0) {
+				noTextImg.style.display = 'none';
+				noTextMessage.style.display = 'none';
+			} else {
+				noTextImg.style.display = 'inline-block';
+				noTextMessage.style.display = 'inline-block';
+			}	
 
 		}	
 
@@ -178,7 +198,14 @@
 
 		function mostrarBotonCopiar() {
 
-        	botonCopiar.style.display = 'block';
+			const texto2 = textareaMostrado.value;
+
+			if (texto2.length > 0) {
+			botonCopiar.style.display = 'block';
+			} else {
+			botonCopiar.style.display = 'none';
+			}	
+        	
     }
 
 
@@ -198,7 +225,9 @@
 	var botonDesencriptar = document.querySelector("#desencriptar")
 	var botonEncriptar = document.querySelector("#encriptar")
 	var botonCopiar = document.querySelector("#copiar")
+	var textareaRecibido = document.getElementById("texto-recibido");
 
+	textareaRecibido.addEventListener("input", convertirTexto);
 	textareaMostrado.addEventListener('input', verificarTexto);
 	window.addEventListener('DOMContentLoaded', verificarTexto);
 	textareaMostrado.addEventListener('input', verificarTexto);
