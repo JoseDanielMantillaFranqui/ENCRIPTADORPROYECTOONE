@@ -273,7 +273,7 @@ main {
  	.texto-recibido {
 
  		position: static;
- 		width: 100%;
+ 		width: 99%;
  		display: flex;
  		flex-direction: column;
  		align-items: center;
@@ -333,7 +333,7 @@ main {
 
  	#copiar {
 
- 		left: 15%;
+ 		right: -1.5%;
  	}
 
 
