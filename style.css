@@ -274,7 +274,9 @@ main {
 
  		position: static;
  		width: 100%;
- 		display: inline-block;
+ 		display: flex;
+ 		flex-direction: column;
+ 		align-items: center;
  		margin-top: 200px;
  		margin-bottom: 50px;
  	}
@@ -314,9 +316,114 @@ main {
  	.texto-mostrado {
 
  		position: static;
+ 		width: 98%;
+ 		height: auto;
+ 		display: flex;
+ 		flex-direction: column;
+ 		align-items: center;
+ 		margin-bottom: 20%;
+
+ 	}
+
+ 	#texto-mostrado {
+
+ 		width: 62%;
+		font-size: 30px;
+ 	}
+
+ 	#copiar {
+
+ 		left: 15%;
+ 	}
+
+
+	#no-text-img {
+
+		top: 69%;
+		left: 28%;
+	}
+
+    #no-text-message {
+
+    	font-size: 20px;
+    	left: 31%;
+    	bottom: 144px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 999px) {
+
+main {
+		display: flex;
+		width: 100%;
+		height: auto;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.titulo {
+		position:absolute;
+		left: 20px;
+		font-size: 45px;
+		width: 83%;
+		
+	}
+
+ 	.texto-recibido {
+
+ 		position: static;
+ 		width: 100%;
+ 		display: flex;
+ 		flex-direction: column;
+ 		align-items: center;
+ 		margin-top: 200px;
+ 		margin-bottom: 50px;
+ 	}
+
+ 	#texto-recibido {
+
+ 		width: 68%;
+ 		margin: 0 4% 0 5%;
+ 	}
+
+ 	.botones {
+ 		display: flex;
+ 		flex-direction: column;
+ 		width: 50%;
+ 		align-items: center;
+ 		position: static;
+ 		width: auto;
+ 		margin: 0 30px 50px 30px;
+ 	}
+
+ 	.advertencia {
+
+ 		font-size: 23px;
+ 		width: auto;
+ 	}
+
+ 	#encriptar {
+
+ 		margin-bottom: 15px;
+ 		font-size: 30px;
+ 		padding: 20px 64px;
+ 	}
+
+ 	#desencriptar {
+
+ 		font-size: 30px;
+ 		padding: 22px 38px
+
+ 	}
+
+ 	.texto-mostrado {
+
+ 		position: static;
+ 		display: flex;
+ 		flex-direction: column;
+ 		align-items: center;
  		width: 87%;
  		height: auto;
- 		margin: 0 2% 0 5%;
 
  	}
 
@@ -334,18 +441,19 @@ main {
 	#no-text-img {
 
 		top: 72%;
-		left: 28%;
+		left: 42%;
 	}
 
     #no-text-message {
 
-    	font-size: 20px;
-    	left: 53%;
-    	bottom: 144px;
+    	font-size: 25px;
+    	left: 20%;
+    	bottom: 100px;
     }
+
 }
 
-@media screen and (min-width: 481px) and (max-width: 1280px) {
+@media screen and (min-width: 1000px) and (max-width: 1280px) {
 
 main {
 
