@@ -457,13 +457,22 @@ main {
 	height: 100%;
 }
 
+.titulo {
+		position:absolute;
+		left: 20px;
+		font-size: 40px;
+		width: 55%;
+		
+	}
+
+
 .texto-recibido {
 
 	 	position: absolute;
- 		top: 18%;
+ 		top: 22%;
  		left: 5%;
  		width: 45%;
- 		height: 45%;
+ 		height: 36%;
  	}
 
  	#texto-recibido {
@@ -475,8 +484,9 @@ main {
  	.botones {
 
  		position: absolute;
- 		left: 7%;
- 		width: 52%;
+ 		left: 2%;
+ 		width: 60%;
+ 		top: 75%;
  	}
 
  	.texto-mostrado {
@@ -489,15 +499,22 @@ main {
 
  	#texto-mostrado {
 
- 		width: 87%;
+ 		width: 77%;
+ 		height: 77%;
 
  	}
 
  	#no-text-img {
 
  		position: absolute;
- 		left: 32%;
+ 		left: 28%;
  	}
+
+ 	 #no-text-message {
+
+    	left: 60%;
+    	bottom: 120px;
+    }
 
 
 }
