@@ -504,11 +504,17 @@ main {
 
  	}
 
+ 	#copiar {
+
+ 		left: 15.5%;
+ 	}
+
  	#no-text-img {
 
  		position: absolute;
  		left: 28%;
  	}
+
 
  	 #no-text-message {
 
